@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-if</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+<div id="vue">
+    <h1 v-if="ok">pass</h1>
+    <h1 v-else>no pass</h1>
+</div>
+<div id="vm">
+    <!--注：=== 三个等号在 JS 中表示绝对等于（就是数据与类型都要相等）-->
+    <h1 v-if="type === 'A'">A</h1>
+    <h1 v-else-if="type === 'B'">B</h1>
+    <h1 v-else-if="type === 'C'">C</h1>
+    <h1 v-else>你看不见我</h1>
+</div>
+<script type="text/javascript">
+    var vue = new Vue({
+        el: "#vue",
+        data: {
+            ok: true
+        }
+    });
+    var vm = new Vue({
+        el: '#vm',
+        data: {
+            type: 'A'
+        }
+    });
+</script>
+</body>
+</html>
